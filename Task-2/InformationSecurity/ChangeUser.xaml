@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InformationSecurity"
         mc:Ignorable="d"
-        Title="ChangeUser" Height="450" Width="800">
+        Title="ChangeUser" Height="450" Width="848.012">
     <Grid>
-        
+        <Label x:Name="label1" Content="Login:" HorizontalAlignment="Left" Height="31" Margin="12,289,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" FontSize="16"/>
+        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="265" Margin="10,4,0,0" VerticalAlignment="Top" Width="820" Loaded="listView1_Loaded" PreviewMouseDoubleClick="listView1_PreviewMouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="label2" Content="Password:" HorizontalAlignment="Left" Height="31" Margin="191,290,0,0" VerticalAlignment="Top" Width="87" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="30" Margin="72,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="passBox1" HorizontalAlignment="Left" Height="30" Margin="278,290,0,0" VerticalAlignment="Top" Width="109" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="label4" Content="Role:" HorizontalAlignment="Left" Height="30" Margin="550,290,0,0" VerticalAlignment="Top" Width="40" FontStyle="Italic" FontSize="14"/>
+        <Label x:Name="label3" Content="Level:" HorizontalAlignment="Left" Height="30" Margin="413,288,0,0" VerticalAlignment="Top" Width="45" FontStyle="Italic" FontSize="14"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="28" Margin="458,290,0,0" VerticalAlignment="Top" Width="88" Loaded="comboBox1_Loaded"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="28" Margin="595,290,0,0" VerticalAlignment="Top" Width="94" Loaded="comboBox2_Loaded"/>
+        <Button x:Name="button1" Content="Update" HorizontalAlignment="Left" Height="49" Margin="269,346,0,0" VerticalAlignment="Top" Width="129" Click="button1_Click"/>
+        <Label x:Name="label5" Content="Ban:" HorizontalAlignment="Left" Height="30" Margin="697,288,0,0" VerticalAlignment="Top" Width="45" FontStyle="Italic" FontSize="14"/>
+        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Height="28" Margin="742,290,0,0" VerticalAlignment="Top" Width="88" Loaded="comboBox3_Loaded"/>
+        <Button x:Name="button2" Content="Delete" HorizontalAlignment="Left" Height="49" Margin="433,346,0,0" VerticalAlignment="Top" Width="129" Click="button2_Click"/>
+
     </Grid>
 </Window>

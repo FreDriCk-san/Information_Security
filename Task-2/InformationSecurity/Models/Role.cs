@@ -17,18 +17,8 @@ namespace InformationSecurity.Models
         [Required]
         public int Priority { get; set; }
 
-        public long? LimitTime { get; set; }
-
-        //[Required, ForeignKey("AllowedDayz")]
         public int AllowedDays { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:HH:MM:SS}", ApplyFormatInEditMode = true)]
-        //[DataType(DataType.Time)]
-        //public Nullable<DateTime> StartTime { get; set; }
-
-        [DisplayFormat(DataFormatString = "{0:HH:MM:SS}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Time)]
-        public Nullable<DateTime> AllowedTime { get; set; }
-
+        public TimeSpan? AllowedTime { get; set; }
     }
 }

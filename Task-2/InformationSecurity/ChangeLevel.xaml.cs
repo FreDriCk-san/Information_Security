@@ -19,6 +19,8 @@ namespace InformationSecurity
     /// </summary>
     public partial class ChangeLevel : Window
     {
+        private Models.Level Level { get; set; }
+
         public ChangeLevel()
         {
             InitializeComponent();
@@ -37,12 +39,14 @@ namespace InformationSecurity
                 textBox2.Text = ((obj as Models.Level).CountOfEnter).ToString();
                 textBox3.Text = ((obj as Models.Level).StartTime).ToString();
                 textBox4.Text = ((obj as Models.Level).EndTime).ToString();
+                this.Level = ((obj as Models.Level));
             }
         }
 
         private void listUpdate()
         {
             listView1.Items.Clear();
+            var defaultTime = new TimeSpan(00,00,00);
 
             var gridView = new GridView();
             listView1.View = gridView;
@@ -57,18 +61,58 @@ namespace InformationSecurity
             {
                 foreach (var level in db.Levels)
                 {
-                    listView1.Items.Add(new { Id = level.Id,
+                    listView1.Items.Add(new Models.Level { Id = level.Id,
                         Name = level.Name,
                         CountOfEnter = level.CountOfEnter.HasValue ? level.CountOfEnter : 0,
-                        StartTime = level.StartTime.HasValue ? level.StartTime : DateTime.MinValue,
-                        EndTime = level.EndTime.HasValue ? level.EndTime : DateTime.MinValue  });
+                        StartTime = level.StartTime.HasValue ? level.StartTime : defaultTime,
+                        EndTime = level.EndTime.HasValue ? level.EndTime : defaultTime });
                 }
             }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            //
+            if (Methods.Admin.AddLevel(textBox1.Text, Convert.ToInt32(textBox2.Text), TimeSpan.Parse(textBox3.Text), TimeSpan.Parse(textBox4.Text)))
+            {
+                MessageBox.Show("Level added successful");
+                listUpdate();
+            }
+            else
+            {
+                MessageBox.Show("Something got wrong!");
+            }
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Level.Name = textBox1.Text;
+            this.Level.CountOfEnter = Convert.ToInt32(textBox2.Text);
+            this.Level.StartTime = TimeSpan.Parse(textBox3.Text);
+            this.Level.EndTime = TimeSpan.Parse(textBox4.Text);
+
+            if (Methods.Admin.UpdateLevel(Level))
+            {
+                MessageBox.Show("Updating complete");
+                listUpdate();
+            }
+            else
+            {
+                MessageBox.Show("Something got wrong!");
+            }
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            if (Methods.Admin.DeleteLevel(Level))
+            {
+                MessageBox.Show("Deleted successful");
+                listUpdate();
+            }
+            else
+            {
+                MessageBox.Show("Something got wrong!");
+            }
+        }
+
     }
 }

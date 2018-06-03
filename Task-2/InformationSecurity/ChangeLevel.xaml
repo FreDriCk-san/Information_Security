@@ -23,8 +23,8 @@
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="30" Margin="517,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="00:00:00"/>
         <Label x:Name="label4" Content="EndTime:" HorizontalAlignment="Left" Height="31" Margin="379,230,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="16"/>
         <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="30" Margin="517,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="00:00:00"/>
-        <Button x:Name="button1_Copy" Content="Update" HorizontalAlignment="Left" Height="53" Margin="460,324,0,0" VerticalAlignment="Top" Width="100" Click="button1_Click"/>
-        <Button x:Name="button1_Copy1" Content="Delete" HorizontalAlignment="Left" Height="36" Margin="592,332,0,0" VerticalAlignment="Top" Width="102" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Update" HorizontalAlignment="Left" Height="53" Margin="460,324,0,0" VerticalAlignment="Top" Width="100" Click="button2_Click" />
+        <Button x:Name="button3" Content="Delete" HorizontalAlignment="Left" Height="36" Margin="592,332,0,0" VerticalAlignment="Top" Width="102" Click="button3_Click" />
 
     </Grid>
 </Window>

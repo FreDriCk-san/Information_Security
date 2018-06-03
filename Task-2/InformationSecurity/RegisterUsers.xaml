@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InformationSecurity"
         mc:Ignorable="d"
-        Title="RegisterUsers" Height="441.689" Width="703.269">
+        Title="RegisterUsers" Height="441.689" Width="696.269">
     <Grid>
         <ListView x:Name="listView1" HorizontalAlignment="Left" Height="391" Margin="10,10,0,0" VerticalAlignment="Top" Width="245" Loaded="listView1_Loaded" PreviewMouseDoubleClick="listView1_PreviewMouseDoubleClick">
             <ListView.View>
@@ -22,7 +22,6 @@
         <Label x:Name="label3" Content="Level:" HorizontalAlignment="Left" Height="30" Margin="297,118,0,0" VerticalAlignment="Top" Width="45" FontStyle="Italic" FontSize="14"/>
         <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="28" Margin="342,120,0,0" VerticalAlignment="Top" Width="109" Loaded="comboBox1_Loaded"/>
         <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="28" Margin="559,118,0,0" VerticalAlignment="Top" Width="109" Loaded="comboBox2_Loaded"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="36" Margin="436,194,0,0" VerticalAlignment="Top" Width="102" Click="button1_Click"/>
-
+        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="36" Margin="366,213,0,0" VerticalAlignment="Top" Width="102" Click="button1_Click"/>
     </Grid>
 </Window>

@@ -15,13 +15,8 @@ namespace InformationSecurity.Models
 
         public int? CountOfEnter { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:HH:MM:SS}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Time)]
-        public Nullable<DateTime> StartTime { get; set; }
+        public TimeSpan? StartTime { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:HH:MM:SS}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Time)]
-        public Nullable<DateTime> EndTime { get; set; }
-
+        public TimeSpan? EndTime { get; set; }
     }
 }

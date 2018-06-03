@@ -12,13 +12,18 @@ namespace InformationSecurity.Methods
 
         public static Models.Subject Authorization(string login, string password)
         {
-
-            using (var db = new Context.ContextDB())
+            try
             {
-                var user = db.Subjects.FirstOrDefault(s => (s.Login == login) && (s.Password == password));
-                return user;
+                using (var db = new Context.ContextDB())
+                {
+                    var user = db.Subjects.FirstOrDefault(s => (s.Login == login) && (s.Password == password));
+                    return user;
+                }
             }
 
+            catch { }
+
+            return null;
         }
 
 
